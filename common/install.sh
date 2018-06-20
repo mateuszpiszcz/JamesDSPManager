@@ -26,9 +26,9 @@ if $MAGISK && ! $SYSOVERRIDE; then
   fi
 fi
 
-# GET HQ/SQ FROM ZIP NAME
+# GET HQ/MQ FROM ZIP NAME
 case $(basename $ZIP) in
-  *sq*|*Sq*|*SQ*) QUAL=sq;;
+  *mq*|*Mq*|*MQ*) QUAL=mq;;
   *hq*|*Hq*|*HQ*) QUAL=hq;;
 esac
 
@@ -92,11 +92,11 @@ if [ -z $QUAL ]; then
   ui_print " "
   ui_print "- Select Driver -"
   ui_print "   Choose which drivers you want installed:"
-  ui_print "   Vol Up = HQ, Vol Down = SQ"
+  ui_print "   Vol Up = HQ, Vol Down = MQ"
   if $FUNCTION; then
     QUAL=hq
   else
-    QUAL=sq
+    QUAL=mq
   fi
 else
   ui_print "   Driver quality specified in zipname!"
