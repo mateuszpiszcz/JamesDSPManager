@@ -9,6 +9,8 @@ This module enables JamesDSPManager. [More details in support thread](https://fo
 ## Change Log
 ### v1.7 - x.xx.2018
 * Big update - uses float 64 upmixed spatializer now
+
+### v1.6.3 - 7.17.2018
 * Unity v1.5.5 update
 
 ### v1.6.2 - 5.7.2018
