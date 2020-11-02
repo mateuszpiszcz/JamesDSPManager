@@ -76,6 +76,7 @@ chooseportold() {
   fi
 }
 ui_print " "
+<<<<<<< Updated upstream
 if [ -z $QUAL ]; then
   if keytest; then
     FUNCTION=chooseport
@@ -119,6 +120,32 @@ if [ $API -ge 26 ]; then
     ui_print "   JamesDSPManager.apk copied to root of internal storage (sdcard)"
     ui_print "   Install manually after booting"
     sleep 2
+=======
+ui_print "- Select Huawei -"
+ui_print "   Is this a Huawei device?"
+ui_print "   Vol Up = Yes, Vol Down = No"
+if chooseport; then
+  QARCH="huawei"
+  cp_ch $MODPATH/common/lib/$QARCH/libjamesdsp.so $MODPATH/system/lib64/soundfx/libjamesdsp.so
+  cp_ch $MODPATH/common/lib/$QARCH/libjamesDSPImpulseToolbox.so $MODPATH/system/lib64/libjamesDSPImpulseToolbox.so
+else
+  QARCH=$ARCH32
+fi
+
+cp -rf $MODPATH/common/JamesDSP /storage/emulated/0/
+cp_ch $MODPATH/common/lib/$QARCH/libjamesdsp.so $MODPATH/system/lib/soundfx/libjamesdsp.so
+cp_ch $MODPATH/common/lib/$QARCH/libjamesDSPImpulseToolbox.so $MODPATH/system/lib/libjamesDSPImpulseToolbox.so
+[ $API -lt 30 ] && rm -rf $MODPATH/system/product
+
+# Lib fix for pixel 2's, 3's, and essential phone
+ui_print " "
+if device_check -m "Essential Products" || device_check -m "Google"; then
+  ui_print "   Applying lib workaround..."
+  if [ -f $ORIGDIR/system/lib/libstdc++.so ] && [ ! -f $ORIGDIR/vendor/lib/libstdc++.so ]; then
+    cp_ch $ORIGDIR/system/lib/libstdc++.so $MODPATH/system/vendor/lib/libstdc++.so
+  elif [ -f $ORIGDIR/vendor/lib/libstdc++.so ] && [ ! -f $ORIGDIR/system/lib/libstdc++.so ]; then
+    cp_ch $ORIGDIR/vendor/lib/libstdc++.so $MODPATH/system/lib/libstdc++.so
+>>>>>>> Stashed changes
   fi
   rm -rf $INSTALLER/system/app
 fi
