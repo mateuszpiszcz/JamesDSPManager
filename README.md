@@ -1,16 +1,3 @@
-<<<<<<< Updated upstream
-# Ainur JamesDSPManager
-This module enables JamesDSPManager. [More details in support thread](https://forum.xda-developers.com/android/software/soundmod-ainur-audio-t3450516).
-
-## Compatibility
-* Android Jellybean+
-* Selinux enforcing
-* All root solutions (requires init.d support if not using magisk or supersu. Try [Init.d Injector](https://forum.xda-developers.com/android/software-hacking/mod-universal-init-d-injector-wip-t3692105))
-
-## Change Log
-### v1.7 - x.xx.2018
-* Big update - uses float 64 upmixed spatializer now
-=======
 # JamesDSPManager
 This module enables JamesDSPManager. [More details in support thread](https://forum.xda-developers.com/android/apps-games/app-reformed-dsp-manager-t3607970).
 
@@ -161,7 +148,6 @@ This module enables JamesDSPManager. [More details in support thread](https://fo
 
 ### v1.6.4 - 8.24.2018
 * Unity v1.6 update
->>>>>>> Stashed changes
 
 ### v1.6.3 - 7.17.2018
 * Unity v1.5.5 update
